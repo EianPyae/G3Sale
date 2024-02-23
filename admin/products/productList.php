@@ -58,13 +58,14 @@ if (isset($_POST['delete'])) {
 
                     </ul>
                 </div>
-                <div class="col-10 offset-1">
+                <div class="col-12">
 
 
                     <table class="table table-striped table-hover">
                         <tr class="text-center fw-bolder">
                             <td>ID</td>
                             <td>Image</td>
+                            <td>Promo</td>
                             <td>Name</td>
                             <td>Brand</td>
                             <td>Processor</td>
@@ -84,6 +85,9 @@ if (isset($_POST['delete'])) {
                                     </td>
                                     <td class="col-2"> <img src="../uploads/<?php echo $fecth["image"]; ?>" width="150"
                                             class="img-thumbnail ">
+                                    </td>
+                                    <td>
+                                        <?php echo $fecth['promo']; ?>
                                     </td>
                                     <td>
                                         <?php echo $fecth['name']; ?>

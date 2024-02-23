@@ -43,6 +43,7 @@ function addProduct()
     $gpu = $_POST["graphic"];
     $price = $_POST["price"];
     $note = $_POST["description"];
+    $promo = $_POST["promo"];
 
     $fileName = $_FILES["file1"]["name"];
     $tmpName = $_FILES["file1"]["tmp_name"];
@@ -56,7 +57,7 @@ function addProduct()
 
         move_uploaded_file($tmpName, '../uploads/' . $newfilename);
 
-        $query = "INSERT INTO products (category_id,name,processor,memory, storage,graphics,price,description,image) VALUES('$brandId','$name','$cpu','$ram','$storage','$gpu','$price','$note','$newfilename')";
+        $query = "INSERT INTO products (category_id,name,processor,memory, storage,graphics,price,description,image,promo) VALUES('$brandId','$name','$cpu','$ram','$storage','$gpu','$price','$note','$newfilename','$promo')";
 
         mysqli_query($connection, $query);
 
@@ -81,6 +82,7 @@ function edit()
     $gpu = $_POST["graphic"];
     $price = $_POST["price"];
     $note = $_POST["description"];
+    $promo = $_POST["promo"];
 
     if ($_FILES["file"]["error"] != 4) {
         $fileName = $_FILES["file"]["name"];
@@ -96,7 +98,7 @@ function edit()
         $query = "UPDATE products SET image = '$newfilename' WHERE product_id ='$id'";
         mysqli_query($connection, $query);
     }
-    $query = "UPDATE products SET name = '$name', category_id = '$brand', processor ='$cpu' , memory ='$ram' , storage ='$storage' ,graphics ='$gpu' , price ='$price' , description ='$note'
+    $query = "UPDATE products SET name = '$name', category_id = '$brand', processor ='$cpu' , memory ='$ram' , storage ='$storage' ,graphics ='$gpu' , price ='$price' , description ='$note', promo='$promo'
     
      WHERE product_id = $id";
     mysqli_query($connection, $query);

@@ -99,7 +99,8 @@ if (isset($_POST['addproduct'])) {
                                     </div>
                                     <div class="col-5">
                                         <label for="price" class="form-label fs-5 ms-1 ">Price</label>
-                                        <input type="text" name="price" class="form-control" placeholder="MMK price" required>
+                                        <input type="text" name="price" class="form-control" placeholder="MMK price"
+                                            required>
                                     </div>
                                 </div>
                                 <div class="mb-1">
@@ -107,13 +108,23 @@ if (isset($_POST['addproduct'])) {
                                     <textarea name="description" id="description" placeholder="Fill the product info"
                                         cols="20" rows="5" class="form-control" required></textarea><br>
                                 </div>
+                                <div class="mb-3 d-flex ">
+                                    <div class=" form-control ">
+                                        <label for="promo" class="mb-2 fw-bold ">Select a Promotion Type</label>
+                                        <select class="form-select me-5" name="promo" id='promo'
+                                            aria-label=" label select">
+                                            <option value="" selected></option>
+                                            <option value="Cash Back">Cashback</option>
+                                            <option value="New Arrival">NewArrival</option>
+                                            <option value="Hot Item">HotItem</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3 d-flex flex-column col-6">
+                                        <label for="" class="form-label fs-5 ms-1">Image</label>
+                                        <input type="file" name="file1">
+                                    </div>
 
-                                <div class="mb-3 d-flex flex-column">
-                                    <label for="" class="form-label fs-5 ms-1">Image</label>
-                                    <input type="file" name="file1">
                                 </div>
-
-
                                 <div class="d-flex ">
                                     <button type="submit" name="addproduct" value="addproduct"
                                         class="btn btn-success w-20 me-2"> Create

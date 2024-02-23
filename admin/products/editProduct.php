@@ -51,13 +51,13 @@ if (isset($_POST['updateProduct'])) {
                         <div class="card-body">
                             <form class="" action="" method="post" enctype="multipart/form-data">
                                 <div class="d-flex mb-3">
-                                <div class=" col-md-4">
+                                    <div class=" col-md-4">
                                         <!--  fetch brand name from brand in db -->
                                         <label for="" class="form-label fs-5"> Brand Name
                                         </label>
-                                        <select class="form-select" name="brand"
-                                            aria-label="Floating label select">
-                                            <option selected value="<?php echo $categoryId; ?>">---Select One---</option>
+                                        <select class="form-select" name="brand" aria-label="Floating label select">
+                                            <option selected value="<?php echo $categoryId; ?>">---Select One---
+                                            </option>
                                             <?php
                                             $query = "SELECT * from category";
                                             $go_query = mysqli_query($connection, $query);
@@ -65,8 +65,8 @@ if (isset($_POST['updateProduct'])) {
                                                 $brandId = $row['id'];
                                                 $brandName = $row['brand'];
                                                 $selected = ($brandId == $categoryId) ? 'selected' : '';
-                                                    echo "<option value='{$brandId}' {$selected}>{$brandName}</option>";
-                                                
+                                                echo "<option value='{$brandId}' {$selected}>{$brandName}</option>";
+
                                             }
                                             ?>
                                         </select>
@@ -113,9 +113,27 @@ if (isset($_POST['updateProduct'])) {
                                         required><?php echo $edit['description']; ?></textarea><br>
                                 </div>
 
-                                <div class="mb-3 d-flex flex-column">
-                                    <label for="" class="form-label  fs-5">Image</label>
-                                    <input type="file" name="file">
+                                <div class="d-flex mb-2">
+                                    <div class=" col-md-4">
+                                        <!--  fetch brand name from brand in db -->
+                                        <label for="" class="form-label fs-5"> Promotion Type
+                                        </label>
+                                        <select class="form-select" name="promo" aria-label="Default select example"
+                                            required>
+                                            <?php
+                                            $promoType = ["Cash Back", "New Arrival", "Hot Item"];
+
+                                            foreach ($promoType as $promo) {
+                                                $selected = ($edit['promo'] == $promo) ? "selected='selected'" : "";
+                                                echo "<option value=\"$promo\" $selected>$promo</option>";
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3 d-flex flex-column ms-4">
+                                        <label for="" class="form-label  fs-5">Image</label>
+                                        <input type="file" name="file">
+                                    </div>
                                 </div>
 
 

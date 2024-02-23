@@ -58,13 +58,23 @@ if (isset($_POST['delete'])) {
                     <div class="row ">
                         <div class="d-flex ">
 
-                            <div class="d-flex justify-content-center flex-column col-3 m-2 p-2 border   border-2">
+                            <div class="d-flex justify-content-center flex-column col-4 m-2 p-2 border   border-2">
                                 <img src="../uploads/<?php echo $d["image"]; ?>" width="350" class="img-thumbnail">
                                 <h4 class="m-2">Price -
                                     <?php echo $d["price"] . " MMK"; ?>
                                 </h4>
+                                <?php
+                                if(empty($d['promo'])){
+                                
+                                }else {
+                                    $promo = $d['promo'];
+                                    echo "<h5 class='m-2'>Type -
+                                   <span class='text-danger'>{$promo}</span>
+                                </h5>";
+                                }
+                                ?>
                             </div>
-                            <div class="col-7 m-2 border w-50 border-2">
+                            <div class="col-7 m-2 p-2 border w-50 border-2">
                                 <div class="ms-2">
                                     <h4>Name -
                                         <?php echo $d["name"]; ?>

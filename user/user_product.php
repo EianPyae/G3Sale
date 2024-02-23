@@ -45,11 +45,11 @@ $pgresult = mysqli_query($connection, $sql);
         <div class="row mt-5 justify-content-center ">
             <div class="d-flex  ">
                 <div class="col-lg-2 col-md-3  col-sm-4 border border-secondary rounded-2 p-1 me-3 ms-lg-3">
-
+                    <!-- Categories / filter -->
                     <h5 class=" mb-2 mt-3 ms-2 fs-3">Filter</h5>
 
                     <hr>
-                    <!-- Categories / filter -->
+
                     <div class="">
                         <form action="" method="GET">
                             <div class="card shadow mt-3">
@@ -84,10 +84,9 @@ $pgresult = mysqli_query($connection, $sql);
                                 </div>
                             </div>
                         </form>
-
                     </div>
-
                 </div>
+                <!-- Categories / filter -->
 
                 <div class=" col-10 ">
                     <div class="row row-cols-2 row-cols-md-3 g-3 ms-5 ">
@@ -111,6 +110,7 @@ $pgresult = mysqli_query($connection, $sql);
                                         $memory = $proditems['memory'];
                                         $storage = $proditems['storage'];
                                         $graphics = $proditems['graphics'];
+                                        $promo = $proditems['promo'];
                                         echo "<div class='col-lg-3 col-md-5 col-sm-7  me-lg-4 g-2 '>";
                                         echo "<div class='card bg-white ms-2 me-3' style='width: 20rem; height:38rem;'>";
                                         echo "<img src='../admin/uploads/{$photo}' class='card-img-top ' alt='{$product_name}' width='150' height='160'>";
@@ -122,6 +122,7 @@ $pgresult = mysqli_query($connection, $sql);
                                         echo "<p class=''><span class='fw-bold fs-5'> Storage:</span> {$storage} </p>";
                                         echo "<p class=''><span class='fw-bold fs-5'>Graphics:</span> {$graphics} </p>";
                                         echo "<p class=''><span class='fw-bold fs-5'>Price:</span> {$price} MMK </p>";
+                                        echo "<p class='fw-bold fs-4 text-danger  text-center text-uppercase'> {$promo}</i> </p>";
                                         echo "</div>";
                                         echo "<a href='addtocart.php?id={$product_id}' class='btn btn-primary position-absolute bottom-0 mb-2 start-10'>Add to Cart</a>";
                                         echo "</div></div></div>";
@@ -148,6 +149,7 @@ $pgresult = mysqli_query($connection, $sql);
                                 $memory = $out['memory'];
                                 $storage = $out['storage'];
                                 $graphics = $out['graphics'];
+                                $promo = $out['promo'];
                                 echo "<div class='col-lg-3 col-md-5 col-sm-8  me-4 g-4  '>";
                                 echo "<div class='card bg-white ms-2 me-3' style='width: 20rem; height:38rem;'>";
                                 echo "<img src='../admin/uploads/{$photo}' class='card-img-top ' alt='{$product_name}' width='150' height='160'>";
@@ -159,6 +161,7 @@ $pgresult = mysqli_query($connection, $sql);
                                 echo "<p class=''><span class='fw-bold fs-5'> Storage:</span> {$storage} </p>";
                                 echo "<p class=''><span class='fw-bold fs-5'>Graphics:</span> {$graphics} </p>";
                                 echo "<p class=''><span class='fw-bold fs-5'>Price:</span> {$price} MMK </p>";
+                                echo "<p class='fw-bold fs-4 text-danger  text-center text-uppercase'> {$promo} </p>";
                                 echo "</div>";
                                 echo "<a href='addtocart.php?id={$product_id}' class='btn btn-primary position-absolute bottom-0 mb-2 start-10'>Add to Cart</a>";
                                 echo "</div></div></div>";
