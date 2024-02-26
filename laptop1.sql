@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 11, 2024 at 02:24 AM
+-- Generation Time: Feb 23, 2024 at 03:49 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -106,9 +106,9 @@ CREATE TABLE `hot_sale` (
 --
 
 INSERT INTO `hot_sale` (`id`, `carousel_name`, `carousel_description`, `carousel_image`, `created_at`) VALUES
-(15, 'Pay Day Sale', 'Pay Day Sale', '65c245caa04e79.57066325.png', '2024-02-06 14:44:26'),
-(16, 'Acer Laptops with Some Specification', 'Acer Laptops with Some Specification', '65c3402d1bc574.01575621.png', '2024-02-07 08:32:45'),
-(17, 'Cash Back Sale', 'Cash Back Sale', '65c3404e4c9816.34840777.png', '2024-02-07 08:33:18');
+(15, 'Pay Day Sale Hot Items', 'Pay Day Sale Hot Items', '65d899d4031765.50702407.jpg', '2024-02-06 14:44:26'),
+(16, 'New Arrival Acer Laptop with Some Specification', 'New Arrival Acer Laptop with Some Specification', '65d899be3bc047.94909864.jpg', '2024-02-07 08:32:45'),
+(17, 'Cash Back Sale', 'Cash Back Sale', '65d8999eeb48a2.01652864.png', '2024-02-07 08:33:18');
 
 -- --------------------------------------------------------
 
@@ -244,6 +244,7 @@ CREATE TABLE `products` (
   `product_id` bigint(20) NOT NULL,
   `category_id` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
+  `promo` varchar(255) DEFAULT NULL,
   `processor` varchar(255) NOT NULL,
   `memory` varchar(255) NOT NULL,
   `storage` varchar(255) NOT NULL,
@@ -258,15 +259,18 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`product_id`, `category_id`, `name`, `processor`, `memory`, `storage`, `graphics`, `price`, `description`, `image`, `created_at`) VALUES
-(42, '64', 'Aspire 5G Intel', 'Intel Core i7-1255U ', '8 GB', '512 GB', '2GB VRAM', 3244070, 'CPU: Intel® Core i7-1255U Processor (12MB Cache, 2.0 GHz up to 4.7 GHz)\r\nGraphic: NVIDIA® Geforce® MX550 with 2GB VRAM\r\nMemory: 8GB DDR4 Memory 3200 MHz (One slot free up to 16GB)\r\nStorage: 512GB PCle NVMe SSD (One slot free PCIe SSD)\r\nDisplay: 15.6\" display with FHD Acer ComfyView\r\nWebcam: 720P HD Video at 30Fps\r\nWireless and Networking: HDMI, GBLAN, USB 3.0 x 1, 3.2 x 2, WiFi6E + BT\r\nBattery: 50Wh 3-cell Li-ion battery\r\nColor: Steel Gray\r\nWeight: 1.8kg (3.9Lbs)\r\n', '65c225c172bfe3.66856482.png', '2024-02-06 12:27:45'),
-(43, '65', 'Asus Zenbook Pro 16X OLED ', 'Intel® Core™ i7-12700H ', '16GB LPDDR5 ', '1TB', '6GB GDDR6', 4585470, 'Asus ( Asus Zenbook Pro 16X OLED (UX7602ZM-ME022W) i7-12700H Laptop )\r\nCPU / Processor: Intel® Core™ i7-12700H Processor 2.3 GHz (24M Cache, up to 4.7 GHz) ,\r\nMemory: 16GB LPDDR5 on board\r\nStorage: 1TB M.2 NVMe™ PCIe® 4.0 Performance SSD\r\nDisplay Screen: 16.0-inch, 4K (3840 x 2400) OLED \r\nGraphic Card: NVIDIA® GeForce® RTX™ 3060 Laptop GPU,  6GB GDDR6\r\nOperation System: Windows 11 Home\r\nSoftware Preload Microsoft office Home & Student 2021\r\nKeyboard / Touchpad\r\nBacklit Chiclet Keyboard Per-Key RGBW with N-key Rllover, 1.4mm Key-travel, Support NumberPad\r\nCamera720p HD camera\r\nAudioSmart Amp Technology ,\r\nBuilt-in 4-way stereo speakers ,\r\nBuilt-in array microphone ,\r\nharman/kardon (Premium) ,\r\nwith Cortana and Alexa voice-recognition support\r\nNetwork / Connectivity  \r\nWi-Fi 6(802.11ax)+Bluetooth 5.0 (Dual band) 2*2Fingerprint\r\nYesInterface\r\n1x USB 3.2 Gen 2 Type-A ,\r\n2x Thunderbolt™ 4 supports display / power delivery ,\r\n1x HDMI 2.1 ,\r\n1x 3.5mm Combo Audio Jack ,\r\n1x DC-in ,\r\nSD Express 7.0 card reader\r\nBattery96WHrs, 3S2P, 6-cell Li-ion\r\nDimensions\r\n35.50 x 25.10 x 1.69 ~ 1.78 cm (WxDxH)Weight\r\n2.40kg\r\n', '65c22d2d3398d4.45008413.jpg', '2024-02-06 12:50:22'),
-(44, '64', 'Acer Extensa 15G Ex 215-33-36L0', 'Intel Core i3 N 305', '8 GB', '256 GB SSD', '8 GB', 1620270, 'Acer Extensa 15G Ex215-33-36L0 (Intel Core i3 N305 Processor) Silver Laptop, Microsoft Office 365 Webcam,', '65c23025a51912.84908148.jpg', '2024-02-06 13:12:05'),
-(45, '70', 'ThinkBook 14 G5 IRL', 'Intel® CoreTM i5-1335U', '8 GB', '512 GB', 'Integrated Intel® Iris Xe Graphics', 2502770, 'Model: ThinkBook 14 G5 IRL\r\nMTM: 21JC0010646\r\nSKU: NB0010646\r\nProcessor: Intel® CoreTM i5-1335U, \r\nMemory: 8GB Soldered DDR4-3200 + 1 Slot (up to 16GB)\r\nStorage: 512GB SSD M.2 2280 PCIe® 4.0x4 NVMe®\r\nOS: None\r\nDisplay: 14\" FHD (1920x1080) IPS 300nits Anti-glare, 45% NTSC\r\nCamera: HD 720p with Privacy Shutter\r\nOthers: Backlit KB Fingerprint\r\nGraphic Card: Integrated Intel® Iris Xe Graphics\r\nWireless Card: Wi-Fi® 6, 11ax 2x2 + BT5.1\r\nStandard Ports: 1x Card reader, 1x Ethernet (RJ-45) 1x HDMI® 2.1, up to 4K/60Hz 1x Headphone/microphone combo jack (3.5mm)1x ThunderboltTM 4/ USB4® 40Gbps 1xUSB 3.2 Gen 1, 1x USB 3.2 Gen 1 (Always On), 1x USB-C 3.2 Gen 2\r\nBattery: 3Cell 45WH\r\nColor: Mineral Grey', '65c2342cc4dd85.11641771.jpg', '2024-02-06 13:17:53'),
-(46, '69', 'HP 15s-fq5072TU', 'Intel Core i7-1255U ', '8 GB', '512 GB ', 'Integrated Intel® Iris Xe Graphics', 3208770, 'HP 15s-fq5072TU\r\nWindows 11 Home\r\nIntel Core i7-1255U Processor\r\n8 GB DDR4-3200MHz Ram\r\n512 GB PCIe® NVMe™ M.2 SSD\r\nIntel Iris Xe Graphics\r\n15.6\" FHD (1920 x 1080), IPS\r\n3-cell, 41 Whr Battery\r\n3208770 Kyats', '65c23351bdd434.14253998.jpg', '2024-02-06 13:25:37'),
-(47, '67', 'Inspiron 15 ', '12th Gen Intel® Core™ i3-1215U', '8 GB DDR4', '512 GB SSD', 'Intel® UHD ', 795699, 'Inspiron 15 \r\n12th Gen Intel® Core™ i3-1215U\r\nWindows 11 Home\r\nIntel® UHD Graphics\r\n8 GB DDR4\r\n512 GB SSD\r\n15.6-in. display Full HD (1920X1080)\r\nStarting at 3.63 lbs \r\n15.6-inch laptop made for everyday essential computing. Featuring a stylish design and up to 12th Gen Intel® Core™ processors.', '65c23571648d18.47104799.jpg', '2024-02-06 13:34:41'),
-(48, '71', '15Z90Q-P.AAS7U1', 'Intel 12th Gen Core i7 ', '16 GB', '512GB SSD', 'Integrated Intel® Iris Xe', 1852122, 'LG gram (2022) Laptop 15Z90Q \r\nIntel 12th Gen Core i7, \r\n16GB RAM, \r\n512GB SSD, \r\nWindows 11, Gray', '65c2369c93fb52.96922847.jpg', '2024-02-06 13:39:40'),
-(49, '66', 'MacBook Air 13”', 'M1 chip', '16GB', '2TB', '7-core GPU  4K', 2091906, 'MacBook Air\r\n13”\r\nM1 chip\r\n13.3-inch Retina display5\r\nApple M1 chip\r\n8GB or 16GB unified memory\r\n256GB to 2TB storage3\r\nUp to 18 hours battery life1\r\nTouch ID', '65c2399a315153.94310790.jpg', '2024-02-06 13:52:26');
+INSERT INTO `products` (`product_id`, `category_id`, `name`, `promo`, `processor`, `memory`, `storage`, `graphics`, `price`, `description`, `image`, `created_at`) VALUES
+(42, '64', 'Aspire 5G Intel', 'New Arrival', 'Intel Core i7-1255U ', '8 GB', '512 GB', '2GB VRAM', 3244070, 'CPU: Intel® Core i7-1255U Processor (12MB Cache, 2.0 GHz up to 4.7 GHz)\r\nGraphic: NVIDIA® Geforce® MX550 with 2GB VRAM\r\nMemory: 8GB DDR4 Memory 3200 MHz (One slot free up to 16GB)\r\nStorage: 512GB PCle NVMe SSD (One slot free PCIe SSD)\r\nDisplay: 15.6\" display with FHD Acer ComfyView\r\nWebcam: 720P HD Video at 30Fps\r\nWireless and Networking: HDMI, GBLAN, USB 3.0 x 1, 3.2 x 2, WiFi6E + BT\r\nBattery: 50Wh 3-cell Li-ion battery\r\nColor: Steel Gray\r\nWeight: 1.8kg (3.9Lbs)\r\n', '65c225c172bfe3.66856482.png', '2024-02-06 12:27:45'),
+(43, '65', 'Asus Zenbook Pro 16X OLED ', NULL, 'Intel® Core™ i7-12700H ', '16GB LPDDR5 ', '1TB', '6GB GDDR6', 4585470, 'Asus ( Asus Zenbook Pro 16X OLED (UX7602ZM-ME022W) i7-12700H Laptop )\r\nCPU / Processor: Intel® Core™ i7-12700H Processor 2.3 GHz (24M Cache, up to 4.7 GHz) ,\r\nMemory: 16GB LPDDR5 on board\r\nStorage: 1TB M.2 NVMe™ PCIe® 4.0 Performance SSD\r\nDisplay Screen: 16.0-inch, 4K (3840 x 2400) OLED \r\nGraphic Card: NVIDIA® GeForce® RTX™ 3060 Laptop GPU,  6GB GDDR6\r\nOperation System: Windows 11 Home\r\nSoftware Preload Microsoft office Home & Student 2021\r\nKeyboard / Touchpad\r\nBacklit Chiclet Keyboard Per-Key RGBW with N-key Rllover, 1.4mm Key-travel, Support NumberPad\r\nCamera720p HD camera\r\nAudioSmart Amp Technology ,\r\nBuilt-in 4-way stereo speakers ,\r\nBuilt-in array microphone ,\r\nharman/kardon (Premium) ,\r\nwith Cortana and Alexa voice-recognition support\r\nNetwork / Connectivity  \r\nWi-Fi 6(802.11ax)+Bluetooth 5.0 (Dual band) 2*2Fingerprint\r\nYesInterface\r\n1x USB 3.2 Gen 2 Type-A ,\r\n2x Thunderbolt™ 4 supports display / power delivery ,\r\n1x HDMI 2.1 ,\r\n1x 3.5mm Combo Audio Jack ,\r\n1x DC-in ,\r\nSD Express 7.0 card reader\r\nBattery96WHrs, 3S2P, 6-cell Li-ion\r\nDimensions\r\n35.50 x 25.10 x 1.69 ~ 1.78 cm (WxDxH)Weight\r\n2.40kg\r\n', '65c22d2d3398d4.45008413.jpg', '2024-02-06 12:50:22'),
+(44, '64', 'Acer Extensa 15G Ex 215-33-36L0', NULL, 'Intel Core i3 N 305', '8 GB', '256 GB SSD', '8 GB', 1620270, 'Acer Extensa 15G Ex215-33-36L0 (Intel Core i3 N305 Processor) Silver Laptop, Microsoft Office 365 Webcam,', '65c23025a51912.84908148.jpg', '2024-02-06 13:12:05'),
+(45, '70', 'ThinkBook 14 G5 IRL', NULL, 'Intel® CoreTM i5-1335U', '8 GB', '512 GB', 'Integrated Intel® Iris Xe Graphics', 2502770, 'Model: ThinkBook 14 G5 IRL\r\nMTM: 21JC0010646\r\nSKU: NB0010646\r\nProcessor: Intel® CoreTM i5-1335U, \r\nMemory: 8GB Soldered DDR4-3200 + 1 Slot (up to 16GB)\r\nStorage: 512GB SSD M.2 2280 PCIe® 4.0x4 NVMe®\r\nOS: None\r\nDisplay: 14\" FHD (1920x1080) IPS 300nits Anti-glare, 45% NTSC\r\nCamera: HD 720p with Privacy Shutter\r\nOthers: Backlit KB Fingerprint\r\nGraphic Card: Integrated Intel® Iris Xe Graphics\r\nWireless Card: Wi-Fi® 6, 11ax 2x2 + BT5.1\r\nStandard Ports: 1x Card reader, 1x Ethernet (RJ-45) 1x HDMI® 2.1, up to 4K/60Hz 1x Headphone/microphone combo jack (3.5mm)1x ThunderboltTM 4/ USB4® 40Gbps 1xUSB 3.2 Gen 1, 1x USB 3.2 Gen 1 (Always On), 1x USB-C 3.2 Gen 2\r\nBattery: 3Cell 45WH\r\nColor: Mineral Grey', '65c2342cc4dd85.11641771.jpg', '2024-02-06 13:17:53'),
+(46, '69', 'HP 15s-fq5072TU', 'Cash Back', 'Intel Core i7-1255U ', '8 GB', '512 GB ', 'Integrated Intel® Iris Xe Graphics', 2686860, 'HP 15s-fq5072TU\r\nWindows 11 Home\r\nIntel Core i7-1255U Processor\r\n8 GB DDR4-3200MHz Ram\r\n512 GB PCIe® NVMe™ M.2 SSD\r\nIntel Iris Xe Graphics\r\n15.6\" FHD (1920 x 1080), IPS\r\n3-cell, 41 Whr Battery\r\n3208770 Kyats', '65c23351bdd434.14253998.jpg', '2024-02-06 13:25:37'),
+(47, '67', 'Inspiron 15 ', '', '12th Gen Intel® Core™ i3-1215U', '8 GB DDR4', '512 GB SSD', 'Intel® UHD ', 795699, 'Inspiron 15 \r\n12th Gen Intel® Core™ i3-1215U\r\nWindows 11 Home\r\nIntel® UHD Graphics\r\n8 GB DDR4\r\n512 GB SSD\r\n15.6-in. display Full HD (1920X1080)\r\nStarting at 3.63 lbs \r\n15.6-inch laptop made for everyday essential computing. Featuring a stylish design and up to 12th Gen Intel® Core™ processors.', '65c23571648d18.47104799.jpg', '2024-02-06 13:34:41'),
+(48, '71', '15Z90Q-P.AAS7U1', NULL, 'Intel 12th Gen Core i7 ', '16 GB', '512GB SSD', 'Integrated Intel® Iris Xe', 1852122, 'LG gram (2022) Laptop 15Z90Q \r\nIntel 12th Gen Core i7, \r\n16GB RAM, \r\n512GB SSD, \r\nWindows 11, Gray', '65c2369c93fb52.96922847.jpg', '2024-02-06 13:39:40'),
+(49, '66', 'MacBook Air 13”', '', 'M1 chip', '16GB', '2TB', '7-core GPU  4K', 2091906, 'MacBook Air\r\n13”\r\nM1 chip\r\n13.3-inch Retina display5\r\nApple M1 chip\r\n8GB or 16GB unified memory\r\n256GB to 2TB storage3\r\nUp to 18 hours battery life1\r\nTouch ID', '65c2399a315153.94310790.jpg', '2024-02-06 13:52:26'),
+(50, '66', 'Macbook Pro 16', 'Hot Item', 'M3 max', '48 GB', '5 TB SSD', 'Retina display', 8400000, 'Macbook Pro\r\nM3 max processor\r\nMemory 48 GB\r\nStorage 5 TB\r\nLiquid Retina XDR Display', '65d8a03042bd99.13452178.jpg', '2024-02-23 06:13:52'),
+(51, '70', 'Legion Gaming Laptop', 'Hot Item', 'Ryzen-5', '8 GB', '512 GB', 'NVIDIA GeForce RTX 3050 Ti', 2050000, 'The best laptop for gaming we have tested in the cheap category is the Lenovo IdeaPad Gaming 3 (2021). Though entirely plastic, this 15.6-inch model feels surprisingly sturdy, especially for a model in its price range. For a little over $800 USD, you can get a configuration with an AMD Ryzen 5 5600H CPU, an NVIDIA GeForce RTX 3050 Ti GPU, 8GB of RAM, and 512GB of storage. This CPU and GPU combination can deliver a solid 60 fps gaming experience at 1080p with most titles. 8GB of RAM is not ideal for gaming, and you will quickly run out of space with only 512GB of storage. Thankfully, you can upgrade these components yourself later on.', '65d89f7939cb34.87853257.jpg', '2024-02-23 13:31:14'),
+(52, '64', 'Aspire 3 15.6', 'Hot Item', 'Core i3', '8 GB', '512 GB', 'Intel UHD Graphic', 1350000, 'Core i3 15.6”\r\n8 GB 512 GB\r\nIntel UHD Graphic\r\nBluetooth, Web Camera\r\nWireless LAN(AX), HDMI, USB 3.2, Type C\r\n3 Cells 40Wh Li-Po Battery\r\nWeight 1.7 Kg', '65d8a7b39879c7.97282854.jpg', '2024-02-23 14:09:41');
 
 -- --------------------------------------------------------
 
@@ -293,7 +297,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `phone`, `town`, `img`, `role`, `created_at`) VALUES
 (68, 'admin', 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', '09250058931', 'Sanchaung', '65c73babd20a5-Array', 'Admin', '2024-01-28 06:07:08'),
 (69, 'ppa', 'ppa@gmail.com', '21232f297a57a5a743894a0e4a801fc3', '09250058931', 'Latha', '65b7ab985735f-Array', 'User', '2024-01-29 13:43:03'),
-(70, 'Thazin', 'thazin15@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '09420141608', 'Lanmadaw', '65bdb2731de766.99157837-jpg', 'User', '2024-02-03 03:26:43'),
+(70, 'Thazin', 'thazin15@gmail.com', '21232f297a57a5a743894a0e4a801fc3', '09420141608', 'Lanmadaw', '65d6095ba2aff-Array', 'User', '2024-02-03 03:26:43'),
 (73, 'PhoePyae', 'pyae@gmail.com', '21232f297a57a5a743894a0e4a801fc3', '09456987231', 'Sanchaung', NULL, 'User', '2024-02-07 08:30:09');
 
 --
@@ -368,7 +372,7 @@ ALTER TABLE `commentbox`
 -- AUTO_INCREMENT for table `hot_sale`
 --
 ALTER TABLE `hot_sale`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `orders`
@@ -380,7 +384,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `product_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `users`

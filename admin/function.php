@@ -109,11 +109,11 @@ function edit()
 function deleteProduct()
 {
     global $connection;
-    $id = $_POST["delete"];
-    $query = "DELETE FROM products WHERE product_id = $id";
+    $productId = $_POST["delete"];
+    $query = "DELETE FROM products WHERE product_id = $productId";
     mysqli_query($connection, $query);
-    echo
-        "<script> alert ('Deleted a Product successfully'); </script> ";
+    echo "<script>window.alert('Deleted a product Successfully!')</script>";
+    echo "<script>window.location.href='./productList.php'</script>";
 
 }
 function addUser()
@@ -226,10 +226,6 @@ function deleteUser()
 
     echo "<script>window.alert('Deleted a user Successfully!')</script>";
     echo "<script>window.location.href='./userList.php'</script>";
-
-    // session_destroy();
-    // unset($_SESSION['admin']);
-    // header('location:register.php');
 
 }
 

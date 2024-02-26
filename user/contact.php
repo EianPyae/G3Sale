@@ -40,7 +40,7 @@ $result = mysqli_query($connection, $getquery);
                 <div class="col-lg-6 col-md-8  col-sm-8 ms-4 me-2">
                     <a href="https://www.google.com/maps/place/KMD+Institute+(YUDE+Campus)/@16.8205164,96.1038455,14z/data=!4m10!1m2!2m1!1skmd+myanmar!3m6!1s0x30c1eb0d08bca6a7:0x8bc81800ff9e0354!8m2!3d16.8205203!4d96.1359053!15sCgtrbWQgbXlhbm1hcpIBGGNvbXB1dGVyX3RyYWluaW5nX3NjaG9vbOABAA!16s%2Fg%2F11h7prgsft?entry=ttu"
                         class=" rounded-2 " target="_blank">
-                        <img src="../image/KMDYUDE.png" alt="KMD branches' Locations"
+                        <img src="../image/shops/KMDYUDE.png" alt="KMD branches' Locations"
                             style="width: 100%;height:80%;border:1px solid blue;">
                     </a>
                 </div>

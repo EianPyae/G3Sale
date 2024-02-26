@@ -114,9 +114,9 @@ if (isset($_POST['addproduct'])) {
                                         <select class="form-select me-5" name="promo" id='promo'
                                             aria-label=" label select">
                                             <option value="" selected></option>
-                                            <option value="Cash Back">Cashback</option>
-                                            <option value="New Arrival">NewArrival</option>
-                                            <option value="Hot Item">HotItem</option>
+                                            <option value="Cash Back">Cash Back</option>
+                                            <option value="New Arrival">New Arrival</option>
+                                            <option value="Hot Item">Hot Item</option>
                                         </select>
                                     </div>
                                     <div class="mb-3 d-flex flex-column col-6">

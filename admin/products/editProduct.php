@@ -118,10 +118,9 @@ if (isset($_POST['updateProduct'])) {
                                         <!--  fetch brand name from brand in db -->
                                         <label for="" class="form-label fs-5"> Promotion Type
                                         </label>
-                                        <select class="form-select" name="promo" aria-label="Default select example"
-                                            required>
+                                        <select class="form-select" name="promo" aria-label="Default select example">
                                             <?php
-                                            $promoType = ["Cash Back", "New Arrival", "Hot Item"];
+                                            $promoType = ["", "Cash Back", "New Arrival", "Hot Item"];
 
                                             foreach ($promoType as $promo) {
                                                 $selected = ($edit['promo'] == $promo) ? "selected='selected'" : "";

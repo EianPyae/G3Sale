@@ -74,63 +74,60 @@ if (isset($_POST['delete'])) {
                             <td>Created At</td>
                         </tr>
 
-                        <tbody>
-                            <?php
-                           
-                            while ($fecth = mysqli_fetch_array($pgresult)) {
-                                ?>
-                                <tr>
-                                    <td>
-                                        <?php echo $fecth['product_id']; ?>
-                                    </td>
-                                    <td class="col-2"> <img src="../uploads/<?php echo $fecth["image"]; ?>" width="150"
-                                            class="img-thumbnail ">
-                                    </td>
-                                    <td>
-                                        <?php echo $fecth['promo']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $fecth['name']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $fecth['brand']; ?>
-                                    </td>
-                                    <td class="col-3">
-                                        <?php echo $fecth["processor"]; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $fecth["price"]; ?>
-                                    </td>
 
+                        <?php
 
-
-                                    <td class="text-center">
-                                        <a href="editProduct.php?id=<?php echo $fecth['product_id']; ?>" class="btn">
-                                            <i class="fa-solid fa-square-pen  fs-5"></i>
-                                        </a>
-
-                                        <a href="productDetails.php?id=<?php echo $fecth['product_id']; ?>" class="btn">
-                                            <i class="fa-solid fa-eye fs-4"></i>
-                                        </a>
-                                        <form action="" method="post">
-                                            <button type="submit" name="delete" class="btn" value=<?php echo $fecth['id']; ?>
-                                                onclick="return  confirm('Are you sure you want to DELETE!')">
-                                                <i class="fa-solid fa-trash-can text-danger fs-5"></i>
-                                            </button>
-                                        </form>
-                                    </td>
-
-                                    <td>
-                                        <?php echo $fecth["created_at"]; ?>
-                                    </td>
-
-                                </tr>
-                                <?php
-                            }
-
-
+                        while ($fecth = mysqli_fetch_array($pgresult)) {
                             ?>
-                        </tbody>
+                            <tr>
+                                <td>
+                                    <?php echo $fecth['product_id']; ?>
+                                </td>
+                                <td class="col-2"> <img src="../uploads/<?php echo $fecth["image"]; ?>" width="150"
+                                        class="img-thumbnail ">
+                                </td>
+                                <td>
+                                    <?php echo $fecth['promo']; ?>
+                                </td>
+                                <td>
+                                    <?php echo $fecth['name']; ?>
+                                </td>
+                                <td>
+                                    <?php echo $fecth['brand']; ?>
+                                </td>
+                                <td class="col-3">
+                                    <?php echo $fecth["processor"]; ?>
+                                </td>
+                                <td>
+                                    <?php echo $fecth["price"]; ?>
+                                </td>
+
+                                <td class="text-center">
+                                    <a href="editProduct.php?id=<?php echo $fecth['product_id']; ?>" class="btn">
+                                        <i class="fa-solid fa-square-pen  fs-5"></i>
+                                    </a>
+
+                                    <a href="productDetails.php?id=<?php echo $fecth['product_id']; ?>" class="btn">
+                                        <i class="fa-solid fa-eye fs-4"></i>
+                                    </a>
+                                    <form action="" method="post">
+                                        <button type="submit" name="delete" class="btn" value=<?php echo $fecth['product_id']; ?>
+                                            onclick="return  confirm('Are you sure you want to DELETE!')">
+                                            <i class="fa-solid fa-trash-can text-danger fs-5"></i>
+                                        </button>
+                                    </form>
+                                </td>
+
+                                <td>
+                                    <?php echo $fecth["created_at"]; ?>
+                                </td>
+
+                            </tr>
+                            <?php
+                        }
+
+                        ?>
+
                     </table>
 
                     <!-- *************** -->
@@ -146,7 +143,7 @@ if (isset($_POST['delete'])) {
                         for ($i = 1; $i <= $total_pages; $i++) {
                             $activeClass = $i == $page ? 'active' : '';
                             echo "<li class='page-item {$activeClass}'><a class='page-link' href='productList.php?page={$i}'>{$i}</a></li>";
-                                  
+
                         }
                         ?>
                     </ul>

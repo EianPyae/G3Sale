@@ -76,7 +76,7 @@ if (isset($_POST['delete'])) {
                             </div>
                             <div class="col-7 m-2 p-2 border w-50 border-2">
                                 <div class="ms-2">
-                                    <h4>Name -
+                                    <h4>Name
                                         <?php echo $d["name"]; ?>
                                     </h4>
                                     <h4>
@@ -112,8 +112,8 @@ if (isset($_POST['delete'])) {
                         </div>
 
                     </div>
-                    <div class="">
-                        <textarea name="description" id="" cols="100" rows="10" class="p-2"
+                    <div class="p-2 form-text">
+                        <textarea name="description" id="" cols="70" rows="10" class="p-2 fs-4"
                             style="text-align: justify;"><?php echo $d["description"]; ?></textarea>
                     </div>
 

@@ -117,7 +117,6 @@ if (isset($_POST['delete'])) {
                             <?php
                         }
 
-
                         ?>
                     </table>
 
