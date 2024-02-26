@@ -65,7 +65,6 @@ if (isset($_POST['delete'])) {
                             <td>Email</td>
                             <td>Phone</td>
                             <td>Township</td>
-
                             <td>Role</td>
                             <td>Action</td>
                             <td>Created At</td>
@@ -89,7 +88,6 @@ if (isset($_POST['delete'])) {
                                 <td>
                                     <?php echo $u["town"]; ?>
                                 </td>
-
 
                                 <td>
                                     <?php echo $u["role"]; ?>

@@ -64,9 +64,9 @@ if (isset($_POST['delete'])) {
                                     <?php echo $d["price"] . " MMK"; ?>
                                 </h4>
                                 <?php
-                                if(empty($d['promo'])){
-                                
-                                }else {
+                                if (empty($d['promo'])) {
+
+                                } else {
                                     $promo = $d['promo'];
                                     echo "<h5 class='m-2'>Type -
                                    <span class='text-danger'>{$promo}</span>
@@ -82,7 +82,6 @@ if (isset($_POST['delete'])) {
                                     <h4>
                                         <?php
                                         if ($d) {
-                                            // print_r($d);
                                             $getId = $d['category_id'];
                                             $query = mysqli_query($connection, "SELECT * from category WHERE id = '$getId' ");
                                             while ($out = mysqli_fetch_assoc($query)) {

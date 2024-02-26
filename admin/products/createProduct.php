@@ -69,7 +69,6 @@ if (isset($_POST['addproduct'])) {
                                                 }
                                             }
                                             ?>
-
                                         </select>
 
                                     </div>
@@ -127,8 +126,7 @@ if (isset($_POST['addproduct'])) {
                                 </div>
                                 <div class="d-flex ">
                                     <button type="submit" name="addproduct" value="addproduct"
-                                        class="btn btn-success w-20 me-2"> Create
-                                        Product</button>
+                                        class="btn btn-success w-20 me-2"> Create Product</button>
                                     <a href="./productList.php" class="w-50 "><button type="button" name="cancel"
                                             class="btn btn-secondary "> Cancel</button>
                                     </a>
